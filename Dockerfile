@@ -49,6 +49,10 @@ RUN rm /etc/nginx/sites-enabled/default \
 
 RUN ln -sf /dev/stderr /var/log/nginx/error.log && ln -sf /dev/stdout /var/log/nginx/access.log
 
+
+RUN chmod g+rwx /var/cache/nginx /var/run /var/log/nginx /var/lib/nginx
+RUN sed -i.bak 's/^user/#user/' /etc/nginx/nginx.conf
+
 # Build the Solr app
 # Run Solr in foreground
 # Wait for Solr to load
