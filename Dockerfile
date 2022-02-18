@@ -3,6 +3,7 @@
 
 # Run it like this:
 # docker run -p 80:80 -v /absolute/location/of/your/export.zip:/home/specify/webportal-installer/specify_exports/export.zip webportal-service:improve-build
+# docker run -p 80:80 webportal-service:improve-build
 
 FROM ubuntu:18.04
 
@@ -53,8 +54,9 @@ RUN ln -sf /dev/stderr /var/log/nginx/error.log && ln -sf /dev/stdout /var/log/n
 # Wait for Solr to load
 # Import data from the .zip file
 # Run Docker in foreground
-RUN make clean-all && make build-all \
-	&& ./build/bin/solr start -force \
+RUN make clean-all && make build-all
+
+CMD ./build/bin/solr start -force \
 	&& sleep 20 \
 	&& make load-data \
 	&& nginx -g 'daemon off;'
