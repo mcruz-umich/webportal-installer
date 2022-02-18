@@ -60,4 +60,6 @@ RUN ./build/bin/solr start -force \
 	&& sleep 20 \
 	&& make load-data
 
-CMD nginx -g 'daemon off;'
+#CMD nginx -g 'daemon off;'
+# CMD ["nginx", "-g", "daemon off;"]
+CMD [ "sh", "-c" ]
