@@ -60,5 +60,4 @@ RUN ./build/bin/solr start -force \
 	&& sleep 20 \
 	&& make load-data
 
-CMD nginx -g 'daemon off;' \
-	&& sleep infinity
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
