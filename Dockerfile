@@ -35,7 +35,7 @@ USER specify
 COPY --chown=specify:specify . /home/specify/webportal-installer
 WORKDIR /home/specify/webportal-installer
 
-EXPOSE 80
+EXPOSE 8081
 
 USER root
 
