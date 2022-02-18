@@ -58,8 +58,10 @@ RUN make clean-all && make build-all
 
 RUN ./build/bin/solr start -force \
 	&& sleep 20 \
-	&& make load-data
+	&& make load-data \
+	&& nginx -g 'daemon off;'
 
 #CMD nginx -g 'daemon off;'
 # CMD ["nginx", "-g", "daemon off;"]
-CMD [ "sh" ]
+#CMD [ "sh" ]
+CMD sleep infinity
