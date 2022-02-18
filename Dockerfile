@@ -62,4 +62,4 @@ RUN ./build/bin/solr start -force \
 
 #CMD nginx -g 'daemon off;'
 # CMD ["nginx", "-g", "daemon off;"]
-CMD [ "sh", "-c" ]
+CMD [ "sh" ]
