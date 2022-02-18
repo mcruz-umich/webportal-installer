@@ -56,7 +56,7 @@ RUN ln -sf /dev/stderr /var/log/nginx/error.log && ln -sf /dev/stdout /var/log/n
 # Run Docker in foreground
 RUN make clean-all && make build-all
 
-CMD ./build/bin/solr start -force \
+RUN ./build/bin/solr start -force \
 	&& sleep 20 \
 	&& make load-data \
 	&& nginx -g 'daemon off;'
