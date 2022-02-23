@@ -6,7 +6,7 @@ cd /home/specify/webportal-installer
 /usr/sbin/nginx -g "daemon off;"&
 
 # start solr (-force as root)
-#/home/specify/webportal-installer/build/bin/solr restart -force
+/home/specify/webportal-installer/build/bin/solr restart -force
 
 echo "System Ready"
 
