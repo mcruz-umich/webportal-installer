@@ -3,7 +3,7 @@
 
 # Run it like this:
 # docker run -p 80:80 -v /absolute/location/of/your/export.zip:/home/specify/webportal-installer/specify_exports/export.zip webportal-service:improve-build
-# docker run -p 80:80 webportal-service:improve-build
+# docker run -p 80:8080 webportal-service:improve-build
 
 FROM ubuntu:18.04
 
@@ -49,7 +49,10 @@ RUN rm /etc/nginx/sites-enabled/default \
 
 RUN ln -sf /dev/stderr /var/log/nginx/error.log && ln -sf /dev/stdout /var/log/nginx/access.log
 
+# support running as arbitrary user which belogs to the root group
 RUN chmod g+rwx /var/run /var/log/nginx /var/lib/nginx
+
+# comment user directive as master process is run as user in OpenShift anyhow
 RUN sed -i.bak 's/^user/#user/' /etc/nginx/nginx.conf
 
 # Build the Solr app
@@ -63,4 +66,10 @@ RUN ./build/bin/solr start -force \
 	&& sleep 20 \
 	&& make load-data
 
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+#RUN addgroup nginx root
+#USER nginx
+
+COPY docker-boot.sh /boot.sh
+#RUN chmod g+r-x /boot.sh
+
+ENTRYPOINT ["/boot.sh"]
