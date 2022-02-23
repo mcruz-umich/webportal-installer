@@ -58,14 +58,15 @@ RUN sed -i.bak 's/^user/#user/' /etc/nginx/nginx.conf
 RUN make clean-all && make build-all
 
 # support running as arbitrary user which belogs to the root group
-RUN chmod g+rwx /var/run /var/log/nginx /var/lib/nginx /home/specify/webportal-installer/build/server/logs
+RUN chmod g+rwx /var/run /var/log/nginx /var/lib/nginx
 
 # Run Solr in foreground
 # Wait for Solr to load
 # Import data from the .zip file
-RUN ./build/bin/solr start -force \
-    && sleep 20 \
-    && make load-data
+RUN ./build/bin/solr start -force
+RUN chmod g+rwx /home/specify/webportal-installer/build/server/logs
+RUN sleep 20
+RUN make load-data
 
 COPY docker-boot.sh /boot.sh
 #RUN chmod g+r-x /boot.sh
