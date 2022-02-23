@@ -52,7 +52,7 @@ RUN rm /etc/nginx/sites-enabled/default \
 RUN ln -sf /dev/stderr /var/log/nginx/error.log && ln -sf /dev/stdout /var/log/nginx/access.log
 
 # support running as arbitrary user which belogs to the root group
-RUN chmod g+rwx /var/run /var/log/nginx /var/lib/nginx
+RUN chmod g+rwx /var/run /var/log/nginx /var/lib/nginx ./build/server/logs
 
 # comment user directive as master process is run as user in OpenShift anyhow
 RUN sed -i.bak 's/^user/#user/' /etc/nginx/nginx.conf
