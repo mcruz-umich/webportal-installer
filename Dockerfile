@@ -63,10 +63,9 @@ RUN chmod g+rwx /var/run /var/log/nginx /var/lib/nginx
 # Run Solr in foreground
 # Wait for Solr to load
 # Import data from the .zip file
-RUN ./build/bin/solr start -force
-RUN sleep 20
-RUN make load-data
-#RUN chmod g+rwx /home/specify/webportal-installer/build/server/logs
+RUN ./build/bin/solr start -force \
+    && sleep 20 \
+    && make load-data
 
 COPY docker-boot.sh /boot.sh
 #RUN chmod g+r-x /boot.sh
