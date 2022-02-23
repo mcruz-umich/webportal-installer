@@ -68,10 +68,9 @@ RUN ./build/bin/solr start -force \
     && make load-data
 
 COPY docker-boot.sh /boot.sh
-#RUN chmod g+r-x /boot.sh
+RUN chmod g+u /boot.sh
 
-RUN chmod 775 /home/specify/webportal-installer/build/server/logs
-
+RUN chmod g+u /home/specify/webportal-installer/build
 #RUN ./build/bin/solr restart
 
 ENTRYPOINT ["/boot.sh"]
