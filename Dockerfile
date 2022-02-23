@@ -11,21 +11,23 @@ LABEL maintainer="Specify Collections Consortium <github.com/specify>"
 
 # Get Ubuntu packages
 RUN apt-get update && apt-get -y install \
-	nginx \
-	unzip \
-	curl \
-	wget \
-	python \
-	python-lxml \
-	make \
-	lsof \
-	default-jre
+    nginx \
+    unzip \
+    curl \
+    wget \
+    python \
+    python-lxml \
+    make \
+    lsof \
+    default-jre
 
 # Clean Up
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN groupadd -g 999 specify && \
     useradd -r -u 999 -g specify specify
+
+RUN addgroup specify root
 
 RUN mkdir -p /home/specify/webportal-installer && chown specify.specify -R /home/specify
 
@@ -44,8 +46,8 @@ RUN install -o root -g root -m644 ./webportal-nginx.conf /etc/nginx/sites-availa
 
 # Disable the default nginx site and enable the portal site
 RUN rm /etc/nginx/sites-enabled/default \
-	&& ln -s /etc/nginx/sites-available/webportal-nginx.conf /etc/nginx/sites-enabled/ \
-	&& service nginx stop
+    && ln -s /etc/nginx/sites-available/webportal-nginx.conf /etc/nginx/sites-enabled/ \
+    && service nginx stop
 
 RUN ln -sf /dev/stderr /var/log/nginx/error.log && ln -sf /dev/stdout /var/log/nginx/access.log
 
@@ -56,18 +58,14 @@ RUN chmod g+rwx /var/run /var/log/nginx /var/lib/nginx
 RUN sed -i.bak 's/^user/#user/' /etc/nginx/nginx.conf
 
 # Build the Solr app
+RUN make clean-all && make build-all
+
 # Run Solr in foreground
 # Wait for Solr to load
 # Import data from the .zip file
-# Run Docker in foreground
-RUN make clean-all && make build-all
-
 RUN ./build/bin/solr start -force \
-	&& sleep 20 \
-	&& make load-data
-
-#RUN addgroup nginx root
-#USER nginx
+    && sleep 20 \
+    && make load-data
 
 COPY docker-boot.sh /boot.sh
 #RUN chmod g+r-x /boot.sh
