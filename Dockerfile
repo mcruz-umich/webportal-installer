@@ -73,4 +73,8 @@ RUN chmod g+u /boot.sh
 RUN chmod -R g+u /home/specify/webportal-installer/build
 #RUN ./build/bin/solr restart
 
+RUN touch /home/specify/test-image.jpg
+RUN chmod 777 /home/specify/test-image.jpg
+RUN chmod 777 /home/specify
+
 ENTRYPOINT ["/boot.sh"]
