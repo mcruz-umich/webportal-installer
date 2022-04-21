@@ -1,4 +1,4 @@
-[{
+{
     "solrPageSize": 100,
     "maxSolrPageSize": 5000,
     "imagePreviewSize": 200,
@@ -21,4 +21,4 @@
     "bottomMarginLeft": null,
     "bottomMarginRight": null,
     "bottomWidth": null
-}]
+}
