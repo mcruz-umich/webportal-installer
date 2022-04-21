@@ -248,6 +248,7 @@ Ext.define('SpWebPortal.controller.Settings', {
 		gc['advancedsearch'] = fld.get('advancedsearch');
 		gc['displaycolidx'] = fld.get('displaycolidx');
 		gc['displaywidth'] =  fld.get('width');
+		gc['width'] =  fld.get('width');
 		gc['hiddenbydefault'] = fld.get('hiddenbydefault');
 		gc['linkify'] = fld.get('linkify');
 		//console.info(fld);
