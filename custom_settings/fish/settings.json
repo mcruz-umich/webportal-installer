@@ -16,7 +16,7 @@
     "imageViewSize": 600,
     "maxSolrPageSize": 5000,
     "solrPageSize": 100,
-    "topBranding": '<div style="background-color: #ffff00; border: 1px solid #000">University of Michigan: Division of Fishes<div>',
+    "topBranding": "<div style=\"background-color: #ffff00; border: 1px solid #000\">University of Michigan: Division of Fishes<div>",
     "topHeight": null,
     "topMarginLeft": null,
     "topMarginRight": null,
