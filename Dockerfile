@@ -19,6 +19,7 @@ RUN apt-get update && apt-get -y install \
     python-lxml \
     make \
     lsof \
+    vim \
     default-jre
 
 # Clean Up
