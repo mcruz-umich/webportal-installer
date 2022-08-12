@@ -16,7 +16,7 @@
     "imageViewSize": 600,
     "maxSolrPageSize": 5000,
     "solrPageSize": 100,
-    "topBranding": "<div style=\"background-color: #ffff00; border: 1px solid #000\">University of Michigan: Division of Fishes<div>",
+    "topBranding": "<div class=\"header-wrap\"><div class=\"container\"><div class=\"row\"><div class=\"header-logo><img src=\"/content/dam/michigan-lsa/admin/logos/ummz-logo.png\" alt=\"Museum of Zoology\" title=\"Museum of Zoology\"></div></div></div></div>",
     "topHeight": null,
     "topMarginLeft": null,
     "topMarginRight": null,

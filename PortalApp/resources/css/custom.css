@@ -1,4 +1,123 @@
 #spwpmainbackground-body img {
         width: 100%;
-        border: 10px solid #00FFFF;
+        border: 10px solid #FF0000;
+}
+
+div.pageTitle {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-text-size-adjust: 100%;
+    box-sizing: border-box;
+    color: #333;
+    font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.42857143;
+    margin: 0 0 6px 0;
+    position: relative;
+}
+
+div.pageTitle > h1 {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-text-size-adjust: 100%;
+    box-sizing: border-box;
+    color: inherit;
+    display: inline;
+    font-family: "Sentinel SSm A", "Sentinel SSm B", Georgia, Times, "Times New Roman", serif;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 30px;
+    margin-bottom: 10px;
+    margin-top: 0;
+    margin: .67em 0;
+    width: 90%;
+}
+
+div.header-wrap {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-text-size-adjust: 100%;
+    background: url('clientlibs/images/combined-repeated.png') 0px -236px repeat-x #00274c;
+    box-sizing: border-box;
+    color: #333;
+    font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.42857143;
+}
+
+div.header-wrap > div.container {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-text-size-adjust: 100%;
+    box-sizing: border-box;
+    color: #333;
+    font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.42857143;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 0 5px 10px;
+    width: 1170px;
+}
+
+div.header-wrap > div.container > div.row {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-text-size-adjust: 100%;
+    box-sizing: border-box;
+    color: #333;
+    font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.42857143;
+    margin-left: -15px;
+    margin-right: 0px;
+}
+
+div.header-wrap > div.container > div.row > div.header-logo {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-text-size-adjust: 100%;
+    box-sizing: border-box;
+    color: #333;
+    float: left;
+    font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.42857143;
+    min-height: 55px;
+    padding-bottom: 11px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 11px;
+    position: relative;
+    width: 58.33333333%;
+}
+
+div.header-wrap > div.container > div.row > div.header-logo img {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-text-size-adjust: 100%;
+    border: 0;
+    box-sizing: border-box;
+    color: #337ab7;
+    font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.42857143;
+    max-height: 50px;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+@media screen and (max-width: 1199px) {
+  .header-wrap .header-logo img {
+    max-width: 100%;
+    max-height: 35px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .header-wrap .header-logo {
+    text-align: center;
+  }
+  .header-wrap .header-logo img {
+    max-width: 100%;
+    max-height: 35px;
+  }
 }
