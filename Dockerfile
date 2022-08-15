@@ -77,6 +77,6 @@ RUN chmod -R g+u /home/specify/webportal-installer/build
 RUN touch /home/specify/test-image.jpg
 RUN chmod 777 /home/specify/test-image.jpg
 RUN chmod 777 /home/specify
-RUN chmod 777 /home/specify/webportal-installer/custom_settings/fish/settings.json
+RUN chmod -R 777 /home/specify/webportal-installer
 
 ENTRYPOINT ["/boot.sh"]
