@@ -35,7 +35,7 @@ div.pageTitle > h1 {
 div.header-wrap {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-text-size-adjust: 100%;
-    background: url('resources/images/custom/combined-repeated.png') 0px -236px repeat-x #00274c;
+    background: url('resources/images/custom-combined-repeated.png') 0px -236px repeat-x #00274c;
     box-sizing: border-box;
     color: #333;
     font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B", Arial, Helvetica, sans-serif;
