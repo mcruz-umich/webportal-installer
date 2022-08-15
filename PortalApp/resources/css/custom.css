@@ -17,6 +17,7 @@
 
 @media screen and (max-width: 1199px) {
   #custom-header-logo {
+    border: none;
     max-width: 100%;
     max-height: 35px;
   }
