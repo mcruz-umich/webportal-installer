@@ -31,3 +31,7 @@
     max-height: 35px;
   }
 }
+
+#spwpmainbackground-body > table > tbody > tr > td > img {
+  height:  600px;
+}
