@@ -1,8 +1,8 @@
 {
-    "backgroundURL": "resources/images/custom/custom-bgnd.png",
+    "backgroundURL": "resources/images/custom/custom-bgnd.svg",
     "bannerHeight": 120,
     "bannerTitle": "Specify Web Portal",
-    "bannerURL": "resources/images/custom/custom-banner.png",
+    "bannerURL": "resources/images/custom/custom-banner.svg",
     "bannerWidth": 250,
     "bottomBranding": null,
     "bottomHeight": null,
