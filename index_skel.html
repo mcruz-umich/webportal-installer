@@ -16,29 +16,73 @@
 			#collections span::before {
 					content: "last update: "
 			}
+
+			/* U-M Header */
+			#page {
+			    background: url('fish/resources/images/custom/custom-combined-repeated.png') 0px -236px repeat-x #00274c;
+			    padding: 20px;
+			    margin: unset;
+			}
+
+			/* U-M Header: Logo */
+			#custom-header-logo {
+			    max-width: 100%;
+			    max-height: 50px;
+			    vertical-align: middle;
+			}
+
+			/* U-M Header: Responsive Design: Wide */
+			@media screen and (max-width: 1199px) {
+			  #custom-header-logo {
+			    border: none;
+			    max-width: 100%;
+			    max-height: 35px;
+			  }
+			}
+
+			/* U-M Header: Responsive Design: Narrow */
+			@media screen and (max-width: 767px) {
+			  #custom-header-logo {
+			    text-align: center;
+			  }
+			  .header-wrap .header-logo img {
+			    max-width: 100%;
+			    max-height: 35px;
+			  }
+			}
+
+			#content {
+				padding: 0px 20px;
+			}
+			ul {
+				margin: 0px;
+			}
 		</style>
 	</head>
 	<body>
-		<h2>The following collections are available:</h2>
-		<ul id="collections">
-			<li>Nothing here</li>
-		</ul>
-		<script type="text/javascript">
-			document.querySelectorAll('#collections li').forEach(function(li) {
-					var a = li.querySelector('a');
-					if (a == null) return;
+		<div id="page"><img id="custom-header-logo" src="fish/resources/images/custom/custom-ummz-logo.png" alt="Museum of Zoology" title="Museum of Zoology"></div>
+		<div id="content">
+			<h2>The following collections are available:</h2>
+			<ul id="collections">
+				<li>Nothing here</li>
+			</ul>
+			<script type="text/javascript">
+				document.querySelectorAll('#collections li').forEach(function(li) {
+						var a = li.querySelector('a');
+						if (a == null) return;
 
-					var xhr = new XMLHttpRequest();
-					xhr.open('GET', a.getAttribute('href') + '/load-timestamp.txt');
-					xhr.onload = function() {
-							if (xhr.status === 200) {
-									var update = document.createElement('span');
-									update.textContent = xhr.responseText;
-									li.append(update);
-							}
-					};
-					xhr.send();
-			});
-		</script>
+						var xhr = new XMLHttpRequest();
+						xhr.open('GET', a.getAttribute('href') + '/load-timestamp.txt');
+						xhr.onload = function() {
+								if (xhr.status === 200) {
+										var update = document.createElement('span');
+										update.textContent = xhr.responseText;
+										li.append(update);
+								}
+						};
+						xhr.send();
+				});
+			</script>
+		</div>
 	</body>
 </html>
