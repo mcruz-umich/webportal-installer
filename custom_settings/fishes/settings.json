@@ -16,7 +16,7 @@
     "imageViewSize": 600,
     "maxSolrPageSize": 5000,
     "solrPageSize": 100,
-    "topBranding": "<a href=\"../\"><img id=\"custom-header-logo\" src=\"resources/images/custom/custom-ummz-logo.png\" alt=\"Museum of Zoology\" title=\"Museum of Zoology\"></a>",
+    "topBranding": "<a href=\"../\"><img id=\"custom-header-logo\" src=\"resources/images/custom/custom-logo.png\" alt=\"Museum of Zoology\" title=\"Museum of Zoology\"></a>",
     "topHeight": null,
     "topMarginLeft": null,
     "topMarginRight": null,
