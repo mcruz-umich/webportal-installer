@@ -11,7 +11,7 @@ DEFAULT_SETS := server/solr/configsets/_default
 PYTHON := python2
 
 # Use latest available version of Solr 4.
-SOLR_VERSION := $(shell curl -s $(SOLR_MIRROR)/ | $(PYTHON) get_latest_solr_vers.py)
+SOLR_VERSION := 7.5.0#$(shell curl -s $(SOLR_MIRROR)/ | $(PYTHON) get_latest_solr_vers.py)
 
 SOLR_DIST := solr-$(SOLR_VERSION)
 
